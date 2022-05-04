@@ -79,7 +79,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Account.cs" />
     <Compile Include="Model\DbBankContext.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\InternalTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
