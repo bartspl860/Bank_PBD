@@ -18,6 +18,6 @@ namespace Bank_PBD.Model
         public int Number { get; set; }
         [Required, MaxLength(100)]
         public string Name { get; set; }
-        public int IdClient { get; set; }
+        public int IdClient { get; set; } 
     }
 }
