@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bank_PBD.Model
 {
-    [Table ("Workers")]
+    [Table("Workers")]
     public class Workers
     {
         [Key]
