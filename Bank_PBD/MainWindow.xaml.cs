@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Bank_PBD.Model;
 
 namespace Bank_PBD
 {
@@ -23,6 +24,11 @@ namespace Bank_PBD
         public MainWindow()
         {
             InitializeComponent();
+
+            var db = new DbBankContext();
+            var result = db.Clients.Select(s => s);
+            foreach(var client in result)
+                Console.WriteLine(client.Name);
         }
     }
 }

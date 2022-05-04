@@ -17,5 +17,8 @@ namespace Bank_PBD.Model
                     ApplicationIntent=ReadWrite;
                     MultiSubnetFailover=False")
         { }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<InternalTransaction> InternalTransactions { get; set; }
     }
 }
