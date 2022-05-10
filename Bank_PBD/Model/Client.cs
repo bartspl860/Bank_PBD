@@ -21,5 +21,15 @@ namespace Bank_PBD.Model
         public string Login { get; set; }
         [Required, MaxLength(96)] //sha384 -> 96 znaków
         public string Password { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID: {Id}\n" +
+                $"----------------\n" +
+                $"Name: {Name}\n" +
+                $"Surname: {Surname}\n" +
+                $"Login: {Login}\n" +
+                $"----------------\n";
+        }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bank_PBD.Model;
+using Bank_PBD.Actions;
 
 namespace Bank_PBD
 {
@@ -25,10 +26,8 @@ namespace Bank_PBD
         {
             InitializeComponent();
 
-            var db = new DbBankContext();
-            var result = db.Clients.Select(s => s);
-            foreach(var client in result)
-                Console.WriteLine(client.Name);
+            var result = Actions.Validation.Login("test", "Login123!@");
+            Console.WriteLine(result);
         }
     }
 }

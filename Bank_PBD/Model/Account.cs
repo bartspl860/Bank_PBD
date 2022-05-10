@@ -15,7 +15,8 @@ namespace Bank_PBD.Model
         [Key]
         public int Id { get; set; }
         public decimal Balance { get; set; }
-        public int Number { get; set; }
+        [Required, MaxLength(34)]
+        public string IBAN_Number { get; set; }
         [Required, MaxLength(100)]
         public string Name { get; set; }
         public int IdClient { get; set; } 

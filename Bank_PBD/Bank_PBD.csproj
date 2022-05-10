@@ -65,11 +65,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Storage\Session.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Actions\Transaction.cs" />
+    <Compile Include="Actions\Validation.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -80,9 +82,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202205041745141_BankInit.cs" />
-    <Compile Include="Migrations\202205041745141_BankInit.designer.cs">
-      <DependentUpon>202205041745141_BankInit.cs</DependentUpon>
+    <Compile Include="Migrations\202205100902146_DbInit.cs" />
+    <Compile Include="Migrations\202205100902146_DbInit.designer.cs">
+      <DependentUpon>202205100902146_DbInit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
@@ -102,8 +104,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205041745141_BankInit.resx">
-      <DependentUpon>202205041745141_BankInit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205100902146_DbInit.resx">
+      <DependentUpon>202205100902146_DbInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

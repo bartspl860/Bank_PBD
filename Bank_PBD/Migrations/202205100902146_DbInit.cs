@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class BankInit : DbMigration
+    public partial class DbInit : DbMigration
     {
         public override void Up()
         {
@@ -13,7 +13,7 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Number = c.Int(nullable: false),
+                        IBAN_Number = c.String(nullable: false, maxLength: 34),
                         Name = c.String(nullable: false, maxLength: 100),
                         IdClient = c.Int(nullable: false),
                     })

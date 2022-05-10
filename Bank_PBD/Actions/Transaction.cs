@@ -10,14 +10,14 @@ namespace Bank_PBD.Actions
 {
     public static class Transaction
     {
-        public static bool Make(int accountNumber1, int accountNumber2, decimal sum, string title)
+        public static bool Make(string accountNumber1, string accountNumber2, decimal sum, string title)
         {
             try
             {
                 using (var db = new DbBankContext())
                 {
-                    var acc1 = db.Accounts.Where(w => w.Number == accountNumber1).First();
-                    var acc2 = db.Accounts.Where(w => w.Number == accountNumber2).First();
+                    var acc1 = db.Accounts.Where(w => w.IBAN_Number == accountNumber1).First();
+                    var acc2 = db.Accounts.Where(w => w.IBAN_Number == accountNumber2).First();
 
                     if (acc1 == null)
                         throw new ArgumentNullException(
@@ -44,7 +44,6 @@ namespace Bank_PBD.Actions
                     };
 
                     db.InternalTransactions.Add(transaction);
-
                     db.SaveChanges();
                 }
             }
@@ -53,38 +52,6 @@ namespace Bank_PBD.Actions
                 MessageBox.Show(ex.Message);
                 return false;
             }            
-            return true;
-        }
-        public static bool Revoke(int accountNumber)
-        {
-            try
-            {
-                using (var db = new DbBankContext())
-                {
-                    var account1 = db.Accounts.Where(w => w.Number == accountNumber).First();
-                    var lastTransaction = db.InternalTransactions.Where(w => w.IdSender == account1.Id).First();
-                    var account2 = db.Accounts.Where(w => w.Id == lastTransaction.IdReceiver).First();
-
-                    if (account1 == null || lastTransaction == null)
-                        throw new ArgumentNullException(
-                            "Account does not exists or there is no transactions in database");
-
-                    if (lastTransaction.Date - DateTime.Now > TimeSpan.FromMinutes(10)) 
-                        throw new InvalidTimeZoneException(
-                            $"Revoke function expired");
-
-                    if (lastTransaction.Title.Contains("REVOKE"))
-                        throw new InvalidOperationException(
-                            "You already revoked that transaction");
-
-                    Make(account2.Number, account1.Number, lastTransaction.Sum, $"{lastTransaction.Title} REVOKE");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
             return true;
         }
     }
