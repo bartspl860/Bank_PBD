@@ -4,8 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank_PBD"
+        Icon="1.ico"
         
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" AllowsTransparency="False" Background="Transparent" 
         Title="MainWindow" Height="740" Width="1280">
-    <Frame x:Name="frmMain" Background="White" MouseDown="Border_MouseDown"></Frame>
+    <Grid>
+        <Frame x:Name="frmMain" Background="White" MouseDown="Border_MouseDown" />
+    </Grid>
+   
+
+   
+        
+     
+    
 </Window>
