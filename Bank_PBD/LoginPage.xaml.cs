@@ -12,35 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Bank_PBD.Model;
-using Bank_PBD.Actions;
 
 namespace Bank_PBD
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginPage : Page
     {
-        public MainWindow()
+        public LoginPage()
         {
             InitializeComponent();
-
-            frmMain.Content = new LoginPage();
         }
 
-        private void btnPage1_Click(object sender, RoutedEventArgs e)
+        private void btnRegisterNav_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(e.ChangedButton==MouseButton.Left)
-            {
-                this.DragMove();
-            }
+            MessageBox.Show("Dziala");
         }
     }
 }
