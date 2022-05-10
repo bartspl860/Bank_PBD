@@ -4,12 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank_PBD"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
-    <Grid>
-        <StackPanel VerticalAlignment="Top" Height="50">
-            <Button x:Name="btnPage1" Content="Page 1" Width="100" Height="50" HorizontalAlignment="Left" Click="btnPage1_Click"/>
-        </StackPanel>
-        <Frame x:Name="frmMain" Content="" Margin="0,84,0,0" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Left" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"/>
-    </Grid>
+        
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Title="MainWindow" Height="740" Width="1280">
+    <Frame x:Name="frmMain" Background="White" MouseDown="Border_MouseDown"></Frame>
 </Window>

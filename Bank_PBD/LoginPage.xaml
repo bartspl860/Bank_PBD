@@ -9,15 +9,43 @@
       Title="Login">
 
     <Grid Background="White">
-        <StackPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Frame x:Name="frmLoginPage" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel x:Name="stkLoginPanel" Margin="10,10,10,0" VerticalAlignment="Top" Height="355">
             <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
             <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
-            <Label Content="Login&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"/>
-            <TextBox x:Name="lblLogin" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30">
+                <Label Content="Login" MinWidth="170" MinHeight="30" Height="30" Width="170"/>
+            </Label>
+            <TextBox x:Name="tbxLogin" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
-            <TextBox x:Name="lblPassword" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button x:Name="btnLogin" Content="Zaloguj"  Background="#FF0D6EFD" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50"/>
-        </StackPanel>
+            <TextBox x:Name="tbxPassword" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnLogin" Content="Zaloguj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50" Click="btnLogin_Click"/>
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Nie masz konta?" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Button x:Name="btnRegisterNav" Content="Zarejestruj się!" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#41518f" Click="btnRegisterNav_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="Green"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DarkGoldenrod"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        
     </Grid>
 </Page>
