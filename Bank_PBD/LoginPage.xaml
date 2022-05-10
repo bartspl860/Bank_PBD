@@ -12,7 +12,7 @@
         <StackPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
             <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
-            <Label Content="Login&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"/>
+            <Label Content="Login&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30"/>
             <TextBox x:Name="lblLogin" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
             <TextBox x:Name="lblPassword" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
