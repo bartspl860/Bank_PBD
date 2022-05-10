@@ -27,7 +27,8 @@ namespace Bank_PBD
 
         private void btnRegisterNav_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Dziala");
+            stkLoginPanel.Visibility = Visibility.Collapsed;
+            frmLoginPage.Content = new RegisterPage();
         }
     }
 }

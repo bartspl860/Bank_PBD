@@ -17,7 +17,7 @@ namespace Bank_PBD
     /// <summary>
     /// Logika interakcji dla klasy RegisterPage.xaml
     /// </summary>
-    public partial class RegisterPage : Window
+    public partial class RegisterPage : Page
     {
         public RegisterPage()
         {
