@@ -1,0 +1,23 @@
+﻿<Window x:Class="Bank_PBD.RegisterPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bank_PBD"
+        mc:Ignorable="d"
+        Title="RegisterPage" Height="450" Width="800">
+    <Grid>
+        <StackPanel x:Name="btnRegister1" Margin="10,10,10,44">
+            <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
+            <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
+            <Label HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30">
+                <Label Content="Login" MinWidth="170" MinHeight="30" Height="30" Width="170"/>
+            </Label>
+            <TextBox x:Name="tbxLoginRegister" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
+            <TextBox x:Name="tbxPasswordRegister" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnRegister" Content="Zarejestruj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Bank_PBD
 {
     /// <summary>
-    /// Logika interakcji dla klasy Login.xaml
+    /// Logika interakcji dla klasy RegisterPage.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class RegisterPage : Window
     {
-        public LoginPage()
+        public RegisterPage()
         {
             InitializeComponent();
-        }
-
-        private void btnRegisterNav_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Dziala");
         }
     }
 }
