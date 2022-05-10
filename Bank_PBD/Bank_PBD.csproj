@@ -76,6 +76,9 @@
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Storage\Session.cs" />
+    <Compile Include="Transactions.xaml.cs">
+      <DependentUpon>Transactions.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +98,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Transactions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

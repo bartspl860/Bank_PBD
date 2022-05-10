@@ -19,7 +19,7 @@
             <TextBox x:Name="tbxLogin" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
             <TextBox x:Name="tbxPassword" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button x:Name="btnLogin" Content="Zaloguj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50"/>
+            <Button x:Name="btnLogin" Content="Zaloguj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50" Click="btnLogin_Click"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Nie masz konta?" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>

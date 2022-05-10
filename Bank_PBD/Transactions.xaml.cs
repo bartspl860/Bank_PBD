@@ -18,30 +18,13 @@ using Bank_PBD.Actions;
 namespace Bank_PBD
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy Transactions.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Transactions : Page
     {
-        public MainWindow()
+        public Transactions()
         {
             InitializeComponent();
-
-            frmMain.Content = new LoginPage();
         }
-
-        private void btnPage1_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(e.ChangedButton==MouseButton.Left)
-            {
-                this.DragMove();
-            }
-        }
-
     }
 }

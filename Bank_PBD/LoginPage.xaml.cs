@@ -30,5 +30,11 @@ namespace Bank_PBD
             stkLoginPanel.Visibility = Visibility.Collapsed;
             frmLoginPage.Content = new RegisterPage();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            stkLoginPanel.Visibility = Visibility.Collapsed;
+            frmLoginPage.Content = new Transactions();
+        }
     }
 }
