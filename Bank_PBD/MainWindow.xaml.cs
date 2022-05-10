@@ -29,5 +29,14 @@ namespace Bank_PBD
             var result = Actions.Validation.Login("test", "Login123!@");
             Console.WriteLine(result);
         }
+
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton==MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
     }
 }
