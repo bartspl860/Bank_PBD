@@ -16,6 +16,7 @@ using Bank_PBD.Model;
 using Bank_PBD.Actions;
 using System.Data.SqlClient;
 using System.Data;
+using Bank_PBD.Storage;
 
 namespace Bank_PBD
 {
@@ -37,10 +38,22 @@ namespace Bank_PBD
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-              stkLoginPanel.Visibility = Visibility.Collapsed;
-              frmLoginPage.Content = new Transactions();
+            var login = tbxLogin.Text;
+            var password = tbxPassword.Password;
+            var client = Actions.Validation.Login(login, password);
+
+            if (client == null)
+            {
+                tbxLogin.Clear();
+                tbxPassword.Clear();
+                return;
+            }       
             
-           
+            var db = new DbBankContext();
+            Session.Start(client);
+
+            stkLoginPanel.Visibility = Visibility.Collapsed;
+            frmLoginPage.Content = new Transactions();                       
         }
     }
 }

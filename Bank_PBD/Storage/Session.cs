@@ -13,11 +13,11 @@ namespace Bank_PBD.Storage
         public static Client ValidatedClient { get; private set; }
         public static Account[] Accounts { get; private set; }
         public static DateTime? StartTime { get; private set; }
-        public static void Start(int id)
+        public static void Start(Client client)
         {
             using(var db = new DbBankContext())
             {
-                ValidatedClient = db.Clients.Where(w => w.Id == id).First();                
+                ValidatedClient = client;              
                 if (ValidatedClient == null)
                 {
                     End(); return;

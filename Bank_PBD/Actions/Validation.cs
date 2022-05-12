@@ -11,8 +11,9 @@ namespace Bank_PBD.Actions
 {
     public static class Validation
     {
-        public static bool Login(string username, string password)
+        public static Client Login(string username, string password)
         {
+            Client resultClient = null;
             try
             {
                 using(var db = new DbBankContext())
@@ -22,17 +23,18 @@ namespace Bank_PBD.Actions
                     var hashBytes = sha384hash.ComputeHash(sourceBytes);
                     string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
 
-                    var client = db.Clients.Where(w => w.Login == username && w.Password == hash).First();
-                    if (client == null)
+                    var client = db.Clients.Where(w => w.Login == username && w.Password == hash);
+                    if (client.Count() == 0)
                         throw new Exception("Login error");
+
+                    resultClient = client.First();
                 } 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return false;
+                MessageBox.Show($"{ex.Message}");                
             }
-            return true;           
+            return resultClient;           
         }
     }
 }

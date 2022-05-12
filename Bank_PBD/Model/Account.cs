@@ -19,6 +19,10 @@ namespace Bank_PBD.Model
         public string IBAN_Number { get; set; }
         [Required, MaxLength(100)]
         public string Name { get; set; }
-        public int IdClient { get; set; } 
+        public int IdClient { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

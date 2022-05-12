@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Bank_PBD.Model;
 using Bank_PBD.Actions;
 using System.Data.SqlClient;
+using Bank_PBD.Storage;
 
 namespace Bank_PBD
 {
@@ -27,16 +28,10 @@ namespace Bank_PBD
         {
             InitializeComponent();
 
-            //using (SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            foreach(var account in Session.Accounts)
             {
-               DbBankContext db=new DbBankContext();
-                var accounts = db.Accounts.Select(p => p);
-                foreach(var a in accounts)
-                {
-                    lstbxAccounts.Items.Add(a.Name);
-                }
+                lstbxAccounts.Items.Add(account);
             }
-
         }
 
         private void btnInternalTransfers_Click(object sender, RoutedEventArgs e)

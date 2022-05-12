@@ -26,10 +26,7 @@ namespace Bank_PBD
         {
             InitializeComponent();
             this.Title = "SqBank wszystko za szekle";
-            frmMain.Content = new LoginPage();
-
-           
-            
+            frmMain.Content = new LoginPage(); 
         }
 
         private void btnPage1_Click(object sender, RoutedEventArgs e)
