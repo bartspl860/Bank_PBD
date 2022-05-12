@@ -37,23 +37,9 @@ namespace Bank_PBD
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+              stkLoginPanel.Visibility = Visibility.Collapsed;
+              frmLoginPage.Content = new Transactions();
             
-            var login = tbxLogin.Text.ToString();
-            var pass = tbxPassword.Text.ToString();
-
-            using (SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-            {
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Clients WHERE Login='" + tbxLogin.Text + "' AND Password='" + tbxPassword.Text + "'", conn);
-                DataTable dt = new DataTable(); 
-                sda.Fill(dt);
-                if (dt.Rows[0][0].ToString() == "1")
-                { 
-                    stkLoginPanel.Visibility = Visibility.Collapsed;
-                    frmLoginPage.Content = new Transactions();
-                }
-                else
-                    MessageBox.Show("Invalid username or password");
-            }
            
         }
     }
