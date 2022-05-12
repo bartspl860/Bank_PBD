@@ -42,7 +42,7 @@
             
             
             
-            <TextBlock Text="Kwota"  Foreground="White" FontSize="20"  Height="38" Width="263" Margin="0 0 0 0 "/>
+            <TextBlock Text="Kwota"  Foreground="White" FontSize="20"  Height="38" Width="263" Margin="0 5 0 0 "/>
             <TextBox x:Name="txtbxSum_internal" TextWrapping="Wrap" Width="275" Height="36">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -59,7 +59,7 @@
                     </Style>
                 </TextBox.Resources>
             </TextBox>
-            <Button x:Name="btnSubmitInternalTransfers"  Content="Wykonaj" Margin="0 20 0 0" Background="DarkBlue" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" FontWeight="SemiBold" Width="120" Height="50" />
+            <Button x:Name="btnSubmitInternalTransfers"  Content="Wykonaj" Margin="0 20 0 0" Background="DarkBlue" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" FontWeight="SemiBold" Width="120" Height="50" Click="btnSubmitInternalTransfers_Click" />
 
 
         </StackPanel>

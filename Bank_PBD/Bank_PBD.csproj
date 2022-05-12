@@ -91,6 +91,10 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205121610331_Bank1.cs" />
+    <Compile Include="Migrations\202205121610331_Bank1.designer.cs">
+      <DependentUpon>202205121610331_Bank1.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
@@ -164,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202205100902146_DbInit.resx">
       <DependentUpon>202205100902146_DbInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205121610331_Bank1.resx">
+      <DependentUpon>202205121610331_Bank1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
