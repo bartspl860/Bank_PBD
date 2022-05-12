@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank_PBD"
         Icon="1.ico"
+        ResizeMode="CanResizeWithGrip"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Background="White" 
-        Title="MainWindow" Height="Auto" Width="Auto">
+        Title="MainWindow" Height="780" Width="1280"
+        
+        >
+        
+        
     <Grid HorizontalAlignment="Center" Width="Auto" Height="Auto" VerticalAlignment="Center">
-        <Frame x:Name="frmMain" Background="White" MouseDown="Border_MouseDown" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto" />
+        <Frame x:Name="frmMain" NavigationUIVisibility="Hidden" Background="White" MouseDown="Border_MouseDown" Height="Auto" VerticalAlignment="Center" HorizontalAlignment="Center"   />
     </Grid>
 
 </Window>

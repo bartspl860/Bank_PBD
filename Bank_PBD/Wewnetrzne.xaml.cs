@@ -12,31 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Bank_PBD.Model;
-using Bank_PBD.Actions;
 
 namespace Bank_PBD
 {
     /// <summary>
-    /// Logika interakcji dla klasy Transactions.xaml
+    /// Logika interakcji dla klasy Wewnetrzne.xaml
     /// </summary>
-    public partial class Transactions : Page
+    public partial class Wewnetrzne : Page
     {
-        public Transactions()
+        public Wewnetrzne()
         {
             InitializeComponent();
-            
-
         }
 
-        private void btnInternalTransfers_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Wewnetrzne();
-        }
-
-        private void btnExternalTransfers_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Zewn();
-        }
+       
     }
 }

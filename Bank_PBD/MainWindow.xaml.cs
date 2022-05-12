@@ -27,6 +27,8 @@ namespace Bank_PBD
             InitializeComponent();
             this.Title = "SqBank wszystko za szekle";
             frmMain.Content = new LoginPage();
+
+           
             
         }
 

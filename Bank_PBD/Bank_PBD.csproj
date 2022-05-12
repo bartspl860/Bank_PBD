@@ -98,6 +98,12 @@
     <Compile Include="Transactions.xaml.cs">
       <DependentUpon>Transactions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Wewnetrzne.xaml.cs">
+      <DependentUpon>Wewnetrzne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zewn.xaml.cs">
+      <DependentUpon>Zewn.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +127,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Transactions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Wewnetrzne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zewn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
