@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Bank_PBD.Actions;
 
 namespace Bank_PBD
 {
@@ -22,6 +23,20 @@ namespace Bank_PBD
         public RegisterPage()
         {
             InitializeComponent();
+
+            
+        }
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            if (Actions.Validation.Register(
+                tbxLoginRegister.Text,
+                tbxPasswordRegister.Text,
+                tbxNameRegister.Text,
+                tbxSurnameRegister.Text))
+            {
+                //stkLoginPanel.Visibility = Visibility.Collapsed;
+                //frmLoginPage.Content = new Transactions();
+            }
         }
     }
 }

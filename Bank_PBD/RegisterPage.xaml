@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Bank_PBD"
         mc:Ignorable="d"
         Title="RegisterPage" Height="400" Width="800" >
-    <Grid Background="White">
-        <StackPanel x:Name="stkRegisterPanel" Margin="10,0,10,0" VerticalAlignment="Center" Height="355">
+    <Grid Background="White" Margin="0,0,0,-106">
+        <StackPanel x:Name="stkRegisterPanel" Margin="5,10,5,0" VerticalAlignment="Top" Height="475">
             <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
             <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
             <Label HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30">
@@ -16,7 +16,11 @@
             <TextBox x:Name="tbxLoginRegister" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
             <TextBox x:Name="tbxPasswordRegister" TextWrapping="Wrap" Margin="0,0,0,25" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button x:Name="btnRegister" Content="Zarejestruj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="200" MinHeight="50"/>
+            <Label Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
+            <TextBox x:Name="tbxNameRegister" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label Content="Surname" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="170" MinHeight="30"/>
+            <TextBox x:Name="tbxSurnameRegister" TextWrapping="Wrap" Margin="0,0,0,5" MinWidth="170" MinHeight="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnRegister" Content="Zarejestruj"  Background="#41518f" FontSize="36" Foreground="#F9FFFFFF" MinWidth="200" MinHeight="50" Height="50" Width="137" Click="btnRegister_Click"/>
         </StackPanel>
 
     </Grid>

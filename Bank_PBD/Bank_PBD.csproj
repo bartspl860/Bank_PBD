@@ -91,9 +91,9 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205121610331_Bank1.cs" />
-    <Compile Include="Migrations\202205121610331_Bank1.designer.cs">
-      <DependentUpon>202205121610331_Bank1.cs</DependentUpon>
+    <Compile Include="Migrations\202205140913246_Bank-init.cs" />
+    <Compile Include="Migrations\202205140913246_Bank-init.designer.cs">
+      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -144,10 +144,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202205100902146_DbInit.cs" />
-    <Compile Include="Migrations\202205100902146_DbInit.designer.cs">
-      <DependentUpon>202205100902146_DbInit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\DbBankContext.cs" />
@@ -166,11 +162,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205100902146_DbInit.resx">
-      <DependentUpon>202205100902146_DbInit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205121610331_Bank1.resx">
-      <DependentUpon>202205121610331_Bank1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205140913246_Bank-init.resx">
+      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

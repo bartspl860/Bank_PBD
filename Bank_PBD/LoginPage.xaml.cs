@@ -40,17 +40,13 @@ namespace Bank_PBD
         {
             var login = tbxLogin.Text;
             var password = tbxPassword.Password;
-            var client = Actions.Validation.Login(login, password);
 
-            if (client == null)
+            if (!Actions.Validation.Login(login, password))
             {
                 tbxLogin.Clear();
                 tbxPassword.Clear();
                 return;
-            }       
-            
-            var db = new DbBankContext();
-            Session.Start(client);
+            }
 
             stkLoginPanel.Visibility = Visibility.Collapsed;
             frmLoginPage.Content = new Transactions();                       

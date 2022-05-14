@@ -6,35 +6,108 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using System.Windows;
 using Bank_PBD.Model;
+using Bank_PBD.Storage;
 
 namespace Bank_PBD.Actions
 {
     public static class Validation
     {
-        public static Client Login(string username, string password)
+        public static bool Login(string username, string password)
         {
-            Client resultClient = null;
             try
             {
                 using(var db = new DbBankContext())
                 {
-                    var sha384hash = SHA384.Create();
-                    var sourceBytes = Encoding.UTF8.GetBytes(password);
-                    var hashBytes = sha384hash.ComputeHash(sourceBytes);
-                    string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
-
-                    var client = db.Clients.Where(w => w.Login == username && w.Password == hash);
+                    var hpasswd = Hash(password);
+                    var client = db.Clients.Where(w => w.Login == username && w.Password == hpasswd);
                     if (client.Count() == 0)
                         throw new Exception("Login error");
 
-                    resultClient = client.First();
-                } 
+                    Session.Start(client.First());
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message}");                
+                MessageBox.Show($"{ex.Message}");
+                return false;
             }
-            return resultClient;           
+            return true;           
+        }
+        public static void Logout()
+        {
+            Session.End();
+        }
+        public static bool Register(string login, string password, string name, string surname)
+        {
+            try
+            {
+                using (var db = new DbBankContext())
+                {
+                    // Password length check
+                    if (password.Length < 8)
+                        throw new FormatException("Password must have min 8 characters lenght");
+
+                    // Same login check
+                    var samePasswdClients = db.Clients.Where(c => c.Login == login);
+                    if (samePasswdClients.Count() != 0)
+                        throw new ArgumentException("Client with this login already exists");
+
+                    var client = new Client()
+                    {
+                        Login = login,
+                        Password = Hash(password),
+                        Name = name,
+                        Surname = surname
+                    };
+                    db.Clients.Add(client);
+
+                    db.SaveChanges();
+                }
+                using(var db = new DbBankContext())
+                {
+                    var client = db.Clients.Select(s => s).OrderByDescending(o => o.Id).First();
+
+                    var account = new Account()
+                    {
+                        IBAN_Number = GenerateIBAN(db),
+                        Name = "Konto osobiste",
+                        IdClient = client.Id,
+                    };
+                    db.Accounts.Add(account);
+
+                    db.SaveChanges();
+                    Session.Start(client);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message} \n\n {ex.Data} \n\n {ex.TargetSite} \n\n {ex.Source}");
+                return false;
+            }
+        }
+        private static string Hash(string input)
+        {
+            var sha384hash = SHA384.Create();
+            var sourceBytes = Encoding.UTF8.GetBytes(input);
+            var hashBytes = sha384hash.ComputeHash(sourceBytes);
+            string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+            return hash;
+        }
+        private static string GenerateIBAN(DbBankContext db)
+        {
+            const string numbers = "0123456789";
+            string result;
+            var random = new Random();
+            do
+            {
+                result = "PL";
+                result += new string(Enumerable.Repeat(numbers, 32)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+            }
+            while (db.Accounts.Where(w => w.IBAN_Number == result).Count() != 0);
+
+            return result;
         }
     }
 }
