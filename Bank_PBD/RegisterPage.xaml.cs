@@ -39,8 +39,10 @@ namespace Bank_PBD
 
             if (result.Item1)
             {
-                stkRegisterPanel.Visibility = Visibility.Collapsed;                
-                frmRegisterPage.Content = new Transactions();
+                             
+                var next = new Transactions();
+
+                NavigationService.Navigate(next);
             }
             else
             {
@@ -50,8 +52,10 @@ namespace Bank_PBD
 
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
         {
-            stkRegisterPanel.Visibility = Visibility.Collapsed;
-            frmRegisterPage.Content = new LoginPage();
+           
+            var back = new LoginPage();
+            NavigationService.Navigate(back);
+
         }
     }
 }

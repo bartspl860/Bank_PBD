@@ -56,8 +56,9 @@ namespace Bank_PBD
                 return;
             }
 
-            stkLoginPanel.Visibility = Visibility.Collapsed;
-            frmLoginPage.Content = new Transactions();                       
+           
+            var trans = new Transactions();
+            NavigationService.Navigate(trans);
         }
     }
 }

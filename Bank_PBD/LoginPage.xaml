@@ -4,11 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Bank_PBD"
+      
       mc:Ignorable="d" 
       Title="Login">
 
     <Grid Background="White">
-        <Frame Height="Auto" Width="Auto" x:Name="frmLoginPage" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Frame  x:Name="frmLoginPage" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel x:Name="stkLoginPanel" Margin="10,10,10,0" VerticalAlignment="Top" Height="355">
             <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
             <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
