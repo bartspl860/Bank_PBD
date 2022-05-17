@@ -46,7 +46,7 @@ namespace Bank_PBD
             
             loading.Show();            
             var result = await Actions.Validation.LoginAsync(login, password);
-            loading.WaitForLoad();
+            loading.Hide();
 
             if (!result)
             {

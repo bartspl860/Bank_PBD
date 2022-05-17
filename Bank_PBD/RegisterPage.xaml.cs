@@ -35,7 +35,7 @@ namespace Bank_PBD
                 tbxNameRegister.Text,
                 tbxSurnameRegister.Text);
 
-            loading.WaitForLoad();
+            loading.Hide();
 
             if (result.Item1)
             {
@@ -46,6 +46,12 @@ namespace Bank_PBD
             {
                 MessageBox.Show(result.Item2);
             }
+        }
+
+        private void btnGoBack_Click(object sender, RoutedEventArgs e)
+        {
+            stkRegisterPanel.Visibility = Visibility.Collapsed;
+            frmRegisterPage.Content = new LoginPage();
         }
     }
 }

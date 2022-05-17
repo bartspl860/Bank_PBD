@@ -24,14 +24,5 @@ namespace Bank_PBD
         {
             InitializeComponent();
         }
-        public void WaitForLoad()
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                pbLoading.Value++;
-                Thread.Sleep(10);
-            }
-            this.Hide();
-        }
     }
 }
