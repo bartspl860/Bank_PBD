@@ -23,19 +23,28 @@ namespace Bank_PBD
         public RegisterPage()
         {
             InitializeComponent();
-
-            
         }
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        private async void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (Actions.Validation.Register(
+            var loading = new Loading();
+            loading.Show();
+
+            var result = await Actions.Validation.RegisterAsync(
                 tbxLoginRegister.Text,
-                tbxPasswordRegister.Text,
+                tbxPasswordRegister.Password,
                 tbxNameRegister.Text,
-                tbxSurnameRegister.Text))
+                tbxSurnameRegister.Text);
+
+            loading.WaitForLoad();
+
+            if (result.Item1)
             {
-                //stkLoginPanel.Visibility = Visibility.Collapsed;
-                //frmLoginPage.Content = new Transactions();
+                stkRegisterPanel.Visibility = Visibility.Collapsed;                
+                frmRegisterPage.Content = new Transactions();
+            }
+            else
+            {
+                MessageBox.Show(result.Item2);
             }
         }
     }

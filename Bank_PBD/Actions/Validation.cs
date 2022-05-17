@@ -12,6 +12,11 @@ namespace Bank_PBD.Actions
 {
     public static class Validation
     {
+        public async static Task<bool> LoginAsync(string username, string password)
+        {
+            var result = await Task.Run(() => Login(username, password));
+            return result;
+        }
         public static bool Login(string username, string password)
         {
             try
@@ -27,8 +32,7 @@ namespace Bank_PBD.Actions
                 }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}");
+            {                
                 return false;
             }
             return true;           
@@ -37,7 +41,11 @@ namespace Bank_PBD.Actions
         {
             Session.End();
         }
-        public static bool Register(string login, string password, string name, string surname)
+        public static Task<(bool,string)> RegisterAsync(string login, string password, string name, string surname)
+        {
+            return Task.Run(() => Register(login, password, name, surname));            
+        }
+        public static (bool, string) Register(string login, string password, string name, string surname)
         {
             try
             {
@@ -78,12 +86,11 @@ namespace Bank_PBD.Actions
                     db.SaveChanges();
                     Session.Start(client);
                 }
-                return true;
+                return (true,"OK");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message} \n\n {ex.Data} \n\n {ex.TargetSite} \n\n {ex.Source}");
-                return false;
+                return (false, ex.Message);
             }
         }
         private static string Hash(string input)

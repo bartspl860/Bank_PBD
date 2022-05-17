@@ -36,13 +36,21 @@ namespace Bank_PBD
             frmLoginPage.Content = new RegisterPage();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             var login = tbxLogin.Text;
             var password = tbxPassword.Password;
 
-            if (!Actions.Validation.Login(login, password))
+
+            var loading = new Loading();
+            
+            loading.Show();            
+            var result = await Actions.Validation.LoginAsync(login, password);
+            loading.WaitForLoad();
+
+            if (!result)
             {
+                MessageBox.Show($"Podane dane są niepoprawne");
                 tbxLogin.Clear();
                 tbxPassword.Clear();
                 return;
