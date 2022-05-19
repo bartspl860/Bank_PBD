@@ -77,7 +77,7 @@
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" FontSize="60" Text="Witaj w panelu admina" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBlock>
                 <TextBox x:Name="tbxSearchBar" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" MinHeight="30" TextChanged="tbxSearchBar_TextChanged"/>
-                <ListBox x:Name="lbxUsersList" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False" Height="590"/>
+                <ListBox x:Name="lbxUsersList" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False" Height="590" SelectionChanged="lbxUsersList_SelectionChanged"/>
             </StackPanel>
 
         </Border>

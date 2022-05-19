@@ -71,5 +71,18 @@ namespace Bank_PBD
                 }
             }
         }
+
+        private void lbxUsersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lstbxAccounts.Items.Clear();
+            using (var db = new DbBankContext())
+            {
+                if (lbxUsersList.SelectedIndex < 0)
+                    return;
+
+                var query = db.Accounts.Where(c => c.IdClient == lbxUsersList.SelectedIndex);
+                lstbxAccounts.Items.Add(query.ToString());
+            }
+        }
     }
 }
