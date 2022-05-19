@@ -60,5 +60,11 @@ namespace Bank_PBD
             var trans = new Transactions();
             NavigationService.Navigate(trans);
         }
+
+        private void btnStaffLoginPage_Click(object sender, RoutedEventArgs e)
+        {
+            var staffpage = new StaffLoginPage();
+            NavigationService.Navigate(staffpage);
+        }
     }
 }
