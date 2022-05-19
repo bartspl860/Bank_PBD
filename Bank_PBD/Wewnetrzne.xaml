@@ -25,11 +25,29 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="1" Content="Nowa transakcja wewnętrzna" HorizontalAlignment="Center" VerticalAlignment="Center" Height="86" Width="500" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="30" FontWeight="Bold"/>
-        <TextBox x:Name="tbxTitle" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbxTitle" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Label Grid.Column="1" Content="Tytuł" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
-        <TextBox x:Name="tbxSum" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="tbxSum_TextChanged"/>
+        <TextBox x:Name="tbxSum" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="tbxSum_TextChanged">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Label Grid.Column="1" Content="Kwota($)" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
-        <TextBox x:Name="tbxIBAN" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbxIBAN" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <Label Grid.Column="1" Content="Numer IBAN odbiorcy" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="3" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
         <Button x:Name="btnSubmitTransaction" Grid.Column="1" Content="Zatwierdź" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="41" Width="110" Background="#FFFF8E58" BorderBrush="{x:Null}" IsEnabled="False"/>
         <Calendar Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="197" Grid.RowSpan="3" Margin="0,24,0,0" Width="235"/>
