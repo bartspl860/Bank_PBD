@@ -30,7 +30,7 @@ namespace Bank_PBD
 
             foreach(var account in Session.Accounts)
             {
-                lstbxAccounts.Items.Add(account);
+                lbxAccounts.Items.Add(account);
             }
         }
 
@@ -43,6 +43,9 @@ namespace Bank_PBD
         {
             Main.Content = new Zewn();
         }
-
+        private void lbxAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Main.Content = new Historia(lbxAccounts.SelectedIndex);
+        }
     }
 }

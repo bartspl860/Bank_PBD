@@ -61,7 +61,7 @@
                 <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Profil" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
                 <StackPanel Background="White" Width="240" Height="120" Margin="0 20 0 0">
                     <TextBlock Width="240" Height="30" Background="White" Text="Konta:" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
-                    <ListBox x:Name="lstbxAccounts" Width="240" Height="90"></ListBox>
+                    <ListBox x:Name="lbxAccounts" Width="240" Height="90" SelectionChanged="lbxAccounts_SelectionChanged"></ListBox>
                 </StackPanel>
             </StackPanel>
 
@@ -77,7 +77,7 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
-
+            
 
 
         </Border>
