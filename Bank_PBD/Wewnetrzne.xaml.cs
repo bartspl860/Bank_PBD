@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Bank_PBD.Storage;
+using Bank_PBD.Model;
 
 namespace Bank_PBD
 {
@@ -21,17 +23,55 @@ namespace Bank_PBD
     /// </summary>
     public partial class Wewnetrzne : Page
     {
+        private Account SelectedAccount { get; set; }
         public Wewnetrzne()
         {
             InitializeComponent();
+
+            foreach(var account in Session.Accounts)
+            {
+                lbxAccounts.Items.Add(account);
+            }
+        }
+        private void UpdateBalanceAfterTransaction()
+        {
+            try
+            {
+                var sum = Convert.ToDecimal(tbxSum.Text);
+                var afterTransaction = SelectedAccount.Balance - sum;
+
+                if (afterTransaction < 0)
+                    lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                else
+                    lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+
+                if (SelectedAccount != null)
+                    lblBalanceAfterTransaction.Content = $"Stan konta po transakcji: {afterTransaction}";
+
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
+        private void lbxAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lbxAccounts.SelectedIndex < 0)
+                return;
+
+            SelectedAccount = Session.Accounts[lbxAccounts.SelectedIndex];
+
+            lblSelectedAccount.Content = 
+                $"Numer IBAN: {SelectedAccount.IBAN_Number} \n" +
+                $"Nazwa: {SelectedAccount.Name} \n" +
+                $"Stan Konta: {SelectedAccount.Balance} \n";      
+
+            UpdateBalanceAfterTransaction();
         }
 
-        private void btnSubmitInternalTransfers_Click(object sender, RoutedEventArgs e)
+        private void tbxSum_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //using (SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Bank;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-            {
-
-            }     
+            UpdateBalanceAfterTransaction();                        
         }
     }
 }

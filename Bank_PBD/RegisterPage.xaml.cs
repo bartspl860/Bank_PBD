@@ -49,13 +49,10 @@ namespace Bank_PBD
                 MessageBox.Show(result.Item2);
             }
         }
-
         private void btnGoBack_Click(object sender, RoutedEventArgs e)
-        {
-           
+        {           
             var back = new LoginPage();
             NavigationService.Navigate(back);
-
         }
     }
 }

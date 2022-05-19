@@ -14,8 +14,7 @@ namespace Bank_PBD.Actions
     {
         public async static Task<bool> LoginAsync(string username, string password)
         {
-            var result = await Task.Run(() => Login(username, password));
-            return result;
+            return await Task.Run(() => Login(username, password));
         }
         public static bool Login(string username, string password)
         {

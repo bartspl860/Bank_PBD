@@ -34,15 +34,15 @@
                     <Border  Width="70" Height="70">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                                <GradientStop Color="Beige" Offset="0"/>
+                                <GradientStop Color="Beige" Offset="1"/>
                                 <GradientStop Color="DarkKhaki" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <TextBlock Text="SqB" Foreground="Black" FontSize="30" FontWeight="SemiBold" TextAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 2"/>
+                        <Image Source="/logo.png" Stretch="Fill" Margin="1,1,1,1"/>
 
                     </Border>
                     <StackPanel>
-                        <TextBlock Text="SQuare Bank" FontSize="30" Margin="8 16 0 5" Foreground="#c2cfff" FontWeight="SemiBold"/>
+                        <TextBlock Text="Square Bank" FontSize="30" Margin="8 16 0 5" Foreground="#c2cfff" FontWeight="SemiBold"/>
                         <TextBlock Text="Lepiej nam nie ufać" FontSize="15" Margin="8 0 0 5" Foreground="#7788bf" FontWeight="SemiBold"/>
 
                     </StackPanel>
@@ -66,7 +66,7 @@
             </StackPanel>
 
         </Border>
-        <TextBlock Width="280" Height="40" Background="Transparent" Padding="5"  TextAlignment="Left" Text="2022 SquareGamesStudio TM" FontSize="15" FontFamily="Persons" Foreground="#666699" VerticalAlignment="Top"   TextWrapping="Wrap" HorizontalAlignment="Left" Margin="20,474,0,0" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <TextBlock Width="220" Height="40" Background="Transparent" Padding="5"  TextAlignment="Left" Text="2022 SquareGamesStudio TM" FontSize="15" FontFamily="Persons" Foreground="#666699" VerticalAlignment="Top"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,469,0,0" Grid.Row="1"/>
 
         <!--Main-->
         <Border Grid.Column="1" Grid.RowSpan="2">

@@ -5,69 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Bank_PBD"
       mc:Ignorable="d" 
-      Height="740" Width="1280"
+      Height="740" Width="1000"
       
       Title="Wewnetrzne">
 
     <Grid Background="#41518f" Margin="-10,0,0,0">
-        <StackPanel Margin="10,91,536,28" Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
 
-            <TextBlock Text="Imie" Foreground="White" FontSize="20" TextAlignment="Left"  Height="31" Width="261" Margin="0 10 0 0 "/>
-            <TextBox x:Name="txtbxName_internal" TextWrapping="Wrap" Width="275" Height="36" Margin="0 10 0 0 ">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-
-            <TextBlock Text="Nazwisko"  Foreground="White" FontSize="20"  Height="27" Width="261" Margin="0 10 0 0 "/>
-            <TextBox x:Name="txtbxSurname_internal" TextWrapping="Wrap" Width="275" Height="36" Margin="0 10 0 0 ">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-
-            <TextBlock Text="Numer Konta"  Foreground="White" FontSize="20"  Height="33" Width="263" Margin="0 10 0 0 "/>
-            <TextBox x:Name="txtbxAccNumber_internal" TextWrapping="Wrap" Width="275" Height="36" Margin="0 10 0 0 " >
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-            <TextBlock Text="Upewnij się, że numer konta jest prawidłowy"  Foreground="LightGray" FontSize="14"  Height="23" Width="280" Margin="10 10 0 0 "/>
-            
-            
-            
-            <TextBlock Text="Kwota"  Foreground="White" FontSize="20"  Height="38" Width="263" Margin="0 5 0 0 "/>
-            <TextBox x:Name="txtbxSum_internal" TextWrapping="Wrap" Width="275" Height="36">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-
-            <TextBlock Text="Tytuł Przelewu" Foreground="White" FontSize="20"  Height="35" Width="243" Margin="0 10 20 0 "/>
-            <TextBox x:Name="txtbxTitle_internal" TextWrapping="Wrap" Width="320" Height="36" Margin="45 10 0 0 ">
-                <TextBox.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="6"/>
-                    </Style>
-                </TextBox.Resources>
-            </TextBox>
-            <Button x:Name="btnSubmitInternalTransfers"  Content="Wykonaj" Margin="0 20 0 0" Background="DarkBlue" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" FontWeight="SemiBold" Width="120" Height="50" Click="btnSubmitInternalTransfers_Click" />
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Content="Nowa transakcja wewnętrzna" HorizontalAlignment="Center" VerticalAlignment="Center" Height="86" Width="500" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontSize="30" FontWeight="Bold"/>
+        <TextBox x:Name="tbxTitle" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="1" Content="Tytuł" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
+        <TextBox x:Name="tbxSum" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextChanged="tbxSum_TextChanged"/>
+        <Label Grid.Column="1" Content="Kwota($)" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
+        <TextBox x:Name="tbxIBAN" Grid.Column="1" HorizontalAlignment="Center" Margin="0,53,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Grid.Column="1" Content="Numer IBAN odbiorcy" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="3" VerticalAlignment="Top" Foreground="White" Height="29" Width="204"/>
+        <Button x:Name="btnSubmitTransaction" Grid.Column="1" Content="Zatwierdź" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Height="41" Width="110" Background="#FFFF8E58" BorderBrush="{x:Null}" IsEnabled="False"/>
+        <Calendar Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Height="197" Grid.RowSpan="3" Margin="0,24,0,0" Width="235"/>
+        <ListBox x:Name="lbxAccounts" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,24,0,0" Grid.RowSpan="2" SelectionChanged="lbxAccounts_SelectionChanged"/>
+        <Label Content="Wybierz konto do wykonania transakcji" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="245" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="lblSelectedAccount" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="100" Width="319" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblBalanceAfterTransaction" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="4" VerticalAlignment="Top" Height="100" Width="245" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="#FFCE0101"/>
 
 
-        </StackPanel>
 
-        <Border BorderBrush="Black" BorderThickness="1" Margin="0,683,-1,-1" Background="#495DAC">
-            <TextBlock Text="@Copyright Square Games Studio" TextAlignment="Center" Foreground="#2B3D85" FontSize="20" Margin="0 10 400 0"/>
-        </Border>
-        <TextBlock Text="Przelewy Wewnętrzne" FontSize="40" Foreground="White" FontWeight="SemiBold" Margin="282,0,536,668" />
 
 
     </Grid>
