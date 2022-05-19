@@ -11,7 +11,7 @@
     <Grid Background="White">
         <Frame  x:Name="frmLoginPage" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel x:Name="stkLoginPanel" Margin="10,10,10,0" VerticalAlignment="Top" Height="355">
-            <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="60"/>
+            <Label Content="Symulator bankowości&#xA;" FontSize="36" FontWeight="Normal" BorderThickness="0,0,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="640" MinHeight="50" Height="53"/>
             <Label Content="Projekt studencki 2022" FontSize="24" BorderThickness="0,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="600" MinHeight="50"/>
             <Label HorizontalAlignment="Center" Margin="0,10,0,0" MinWidth="170" MinHeight="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="30">
                 <Label Content="Login" MinWidth="170" MinHeight="30" Height="30" Width="170"/>
@@ -45,6 +45,27 @@
                     </Button.Style>
                 </Button>
             </StackPanel>
+            <Button x:Name="btnStaffLoginPage" Content="Jeżeli jesteś pracownikiem kliknij tutaj" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#41518f" Click="btnStaffLoginPage_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Green"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkGoldenrod"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
 
     </Grid>
