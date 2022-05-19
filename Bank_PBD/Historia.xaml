@@ -1,0 +1,22 @@
+﻿<Page x:Class="Bank_PBD.Historia"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bank_PBD"
+      mc:Ignorable="d" 
+      Height="740" Width="1280"
+      
+      Title="Historia">
+
+    <Grid Background="#41518f" Margin="-10,0,0,0">
+
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,683,-1,-1" Background="#495DAC">
+            <TextBlock Text="@Copyright Square Games Studio" TextAlignment="Center" Foreground="#2B3D85" FontSize="20" Margin="0 10 400 0"/>
+        </Border>
+        <TextBlock FontSize="40" Foreground="White" FontWeight="SemiBold" Margin="410,10,408,658" ><Run Language="pl-pl" Text="Historia"/><LineBreak/><Run Language="pl-pl"/><Run Text="ne"/></TextBlock>
+        <ListBox x:Name="lbxHistory" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="208,121,206,121"/>
+
+
+    </Grid>
+</Page>

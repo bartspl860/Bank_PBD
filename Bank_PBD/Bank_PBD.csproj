@@ -105,6 +105,9 @@
     <Compile Include="Transactions.xaml.cs">
       <DependentUpon>Transactions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Historia.xaml.cs">
+      <DependentUpon>Historia.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Wewnetrzne.xaml.cs">
       <DependentUpon>Wewnetrzne.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
     <Page Include="Transactions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Historia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Wewnetrzne.xaml">
       <SubType>Designer</SubType>
