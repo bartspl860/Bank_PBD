@@ -38,16 +38,18 @@ namespace Bank_PBD
             try
             {
                 var sum = Convert.ToDecimal(tbxSum.Text);
-                var afterTransaction = SelectedAccount.Balance - sum;
-
-                if (afterTransaction < 0)
-                    lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-                else
-                    lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
                 if (SelectedAccount != null)
-                    lblBalanceAfterTransaction.Content = $"Stan konta po transakcji: {afterTransaction}";
+                {
+                    var afterTransaction = SelectedAccount.Balance - sum;
 
+                    if (afterTransaction < 0)
+                        lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                    else
+                        lblBalanceAfterTransaction.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                    lblBalanceAfterTransaction.Content = $"Stan konta po transakcji: {afterTransaction}";
+                    
+                }                   
             }
             catch (Exception ex)
             {
