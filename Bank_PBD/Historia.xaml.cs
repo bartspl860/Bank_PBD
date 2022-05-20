@@ -82,5 +82,11 @@ namespace Bank_PBD
             InitializeComponent();
             DisplayTransactions(selectedAccountIndex);
         }
+
+        private void btnGoBackToTransac_Click(object sender, RoutedEventArgs e)
+        {
+            var back = new Transactions();
+            NavigationService.Navigate(back);
+        }
     }
 }

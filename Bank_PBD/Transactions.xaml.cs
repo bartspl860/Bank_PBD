@@ -43,9 +43,15 @@ namespace Bank_PBD
         {
             Main.Content = new Zewn();
         }
+       
+
         private void lbxAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Main.Content = new Historia(lbxAccounts.SelectedIndex);
+            var Sele = new Historia(lbxAccounts.SelectedIndex);
+            //Main.Content = new Historia(lbxAccounts.SelectedIndex);
+            //MessageBox.Show("XD");
+
+            NavigationService.Navigate(Sele);
         }
     }
 }
