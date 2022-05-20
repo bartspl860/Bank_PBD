@@ -137,16 +137,22 @@ namespace Bank_PBD
         }
         private void btnSubmitTransaction_Click(object sender, RoutedEventArgs e)
         {
-            Transaction.Make(SelectedAccount.IBAN_Number, SelectedIban, SelectedSum, SelectedTitle);
-            MessageBox.Show("Transakcja zrealizowana pomyślnie.");
-            SelectedAccount = null;
-            SelectedIban = null;
-            SelectedSum = 0;
-            SelectedTitle = null;
-            tbxIBAN.Text = string.Empty;
-            tbxSum.Text = string.Empty;
-            tbxTitle.Text = string.Empty;
-            checkConditions();
+            if (Transaction.Make(SelectedAccount.IBAN_Number, SelectedIban, SelectedSum, SelectedTitle))
+            {
+                MessageBox.Show("Transakcja zrealizowana pomyślnie.");
+                SelectedAccount = null;
+                SelectedIban = null;
+                SelectedSum = 0;
+                SelectedTitle = null;
+                tbxIBAN.Text = string.Empty;
+                tbxSum.Text = string.Empty;
+                tbxTitle.Text = string.Empty;
+                checkConditions();
+            }
+            else
+            {
+                MessageBox.Show("Transakcja nie została zrealizowana.");
+            }
         }
     }
 }
