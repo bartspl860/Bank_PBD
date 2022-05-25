@@ -90,13 +90,9 @@
         <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="316,0,178,161" Grid.Column="1"/>
 
 
-        <Button x:Name="btnLogOut" Content="Wyloguj" Background="DarkGray" FontWeight="Bold" Grid.Column="1" Margin="873,0,30,196" Click="btnLogOut_Click">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10"/>
-                 
-                </Style>
-            </Button.Resources>
+        <Button x:Name="btnLogOut"  Grid.Column="1" Margin="893,5,30,196" Click="btnLogOut_Click" Background="Transparent" BorderThickness="0" Width="40" >
+            <Image Source="arrow.png"></Image>
+            
         </Button>
         <!--<Frame x:Name="Main" Grid.Column="1" Content="Frame"/>-->
     </Grid>
