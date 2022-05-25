@@ -58,7 +58,7 @@
                     <Button x:Name="btnInternalTransfers"  Content="Przelewy Wewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30" Click="btnInternalTransfers_Click"/>
                     <Button x:Name="btnExternalTransfers"  Content="Przelewy Zewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30" Click="btnExternalTransfers_Click"/>
                 </StackPanel>
-                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Profil" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Hisotria Transakcji" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
                 <StackPanel Background="White" Width="240" Height="120" Margin="0 20 0 0">
                     <TextBlock Width="240" Height="30" Background="White" Text="Konta:" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
                     <ListBox x:Name="lbxAccounts" Width="240" Height="90" SelectionChanged="lbxAccounts_SelectionChanged"/>
@@ -76,13 +76,18 @@
                     <GradientStop Color="#2c386c" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,70,0,0"/>
+            
+            <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,106,0,0"/>
+
+
 
 
 
 
         </Border>
-        <Button x:Name="btnData"  Content="Informacje Konta" Background="LightCoral" FontSize="16" Foreground="#F9FFFFFF" Margin="24,10,756,191" Grid.Column="1" Click="btnData_Click"/>
+
+        <Button x:Name="btnData"  Content="Twoje Konto" Background="#1D1C4E" FontSize="16" Foreground="#F9FFFFFF" Margin="27,10,732,179" Grid.Column="1" Click="btnData_Click"/>
+        <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="316,0,178,161" Grid.Column="1"/>
         <!--<Frame x:Name="Main" Grid.Column="1" Content="Frame"/>-->
     </Grid>
 </Page>

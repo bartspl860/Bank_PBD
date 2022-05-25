@@ -38,7 +38,7 @@ namespace Bank_PBD
         {
             lblAccName.Content = Session.Accounts[acc_index].Name;
             lblAccNR.Content = Session.Accounts[acc_index].IBAN_Number;
-            lblAccSaldo.Content = Session.Accounts[acc_index].Balance;
+            lblAccSaldo.Content = ($"{Session.Accounts[acc_index].Balance}zł");
         }
     }
 }

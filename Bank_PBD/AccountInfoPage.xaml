@@ -9,14 +9,16 @@
       Title="AccountInfoPage">
 
     <Grid Background="#20386c">
-        <Grid Margin="-2,1,378,300" Background="White">
-            <Label x:Name="lblAccNR" Content="000000" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Height="29" Width="187" FontSize="10" Foreground="DarkGray" HorizontalContentAlignment="Center"/>
+        <Grid Margin="-2,1,362,354" Background="White" MaxHeight="90">
+            <Label x:Name="lblAccNR" Content="000000" HorizontalAlignment="Left" Margin="11,41,0,0" VerticalAlignment="Top" Height="29" Width="187" FontSize="10" Foreground="DarkGray" HorizontalContentAlignment="Center"/>
             <Label x:Name="lblAccName" Content="name" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Height="31" Width="159" Foreground="DarkBlue" FontWeight="SemiBold" FontFamily="Arial-Black" FontSize="20"/>
-            <Label x:Name="lblAccSaldo" Content="Label" HorizontalAlignment="Left" Margin="348,1,0,0" VerticalAlignment="Top" Height="51" Width="150" Foreground="DarkBlue" FontWeight="Bold" FontFamily="Arial-Black" FontSize="30"/>
-            <TextBlock HorizontalAlignment="Left" Margin="333,38,0,0" TextWrapping="Wrap" Text="DOSTĘPNE SRODKI"  Height="34" Width="119" VerticalAlignment="Top" TextAlignment="Right" Foreground="DarkGray" FontSize="10"/>
+            <Label x:Name="lblAccSaldo" Content="Label" HorizontalAlignment="Left" Margin="348,1,0,0" VerticalAlignment="Top" Height="51" Width="248" Foreground="DarkBlue" FontWeight="Bold" FontFamily="Arial-Black" FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="362,38,0,0" TextWrapping="Wrap" Text="DOSTĘPNE SRODKI"  Height="34" Width="119" VerticalAlignment="Top" TextAlignment="Right" Foreground="DarkGray" FontSize="10"/>
         </Grid>
-        <ListBox x:Name="lbxAccountSelect" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="590,59,42,201" SelectionChanged="lbxAccountSelect_SelectionChanged"/>
-        <TextBlock x:Name="tbkAccountSelect" HorizontalAlignment="Left" Margin="649,21,0,0" TextWrapping="Wrap" Text="Wybór konta" VerticalAlignment="Top"/>
+        <Grid Margin="438,0,5,10"/>
+        <ListBox x:Name="lbxAccountSelect" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="597,48,35,258" SelectionChanged="lbxAccountSelect_SelectionChanged" MaxWidth="200"/>
+        <TextBlock x:Name="tbkAccountSelect" HorizontalAlignment="Left" Margin="682,10,0,0" TextWrapping="Wrap" Text="Wybór konta" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="DemiBold"/>
+
 
 
 
