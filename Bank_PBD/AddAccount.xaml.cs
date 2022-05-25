@@ -30,9 +30,23 @@ namespace Bank_PBD
 
         private void btnNewWindowAddAccount_Click(object sender, RoutedEventArgs e)
         {
-           
-          
 
+            using (var db = new DbBankContext())
+            {
+                var client = db.Clients.Select(x=>x.Id==Session.ValidatedClient.Id);
+
+                var account = new Account()
+                {
+                    IBAN_Number=Actions.Validation.GenerateIBAN(db),
+                    Name = txtbxAccName.Text,
+                    IdClient = Session.ValidatedClient.Id,
+                };
+                db.Accounts.Add(account);
+
+                db.SaveChanges();
+
+            }
+            this.Close();
         }
     }
 }

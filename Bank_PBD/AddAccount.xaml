@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="AddAccount" Height="250" Width="400">
     <Grid Background="#0d203b">
-        <TextBox HorizontalAlignment="Center" Margin="0,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtbxAccName" HorizontalAlignment="Center" Margin="0,77,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="53,77,0,0" Foreground="White" TextWrapping="Wrap" Text="Nazwa Konta" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Dodaj Konto" Foreground="White" FontWeight="Bold" FontSize="20" TextAlignment="Center" VerticalAlignment="Top" Height="24" Width="130"/>
-        <Button x:Name="btnNewWindowAddAccount" Content="Dodaj" HorizontalAlignment="Center"  Margin="0,128,0,0" VerticalAlignment="Top" Width="64"/>
+        <Button x:Name="btnNewWindowAddAccount" Content="Dodaj" HorizontalAlignment="Center"  Margin="0,128,0,0" VerticalAlignment="Top" Width="64" Click="btnNewWindowAddAccount_Click"/>
 
     </Grid>
 </Window>
