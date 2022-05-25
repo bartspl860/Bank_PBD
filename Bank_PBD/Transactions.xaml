@@ -58,7 +58,7 @@
                     <Button x:Name="btnInternalTransfers"  Content="Przelewy Wewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30" Click="btnInternalTransfers_Click"/>
                     <Button x:Name="btnExternalTransfers"  Content="Przelewy Zewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30" Click="btnExternalTransfers_Click"/>
                 </StackPanel>
-                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Hisotria Transakcji" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Historia Transakcji" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
                 <StackPanel Background="White" Width="240" Height="120" Margin="0 20 0 0">
                     <TextBlock Width="240" Height="30" Background="White" Text="Konta:" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
                     <ListBox x:Name="lbxAccounts" Width="240" Height="90" SelectionChanged="lbxAccounts_SelectionChanged"/>
@@ -86,7 +86,7 @@
 
         </Border>
 
-        <Button x:Name="btnData"    Margin="850,-8,97,169" Grid.Column="1" Click="btnData_Click" Background="Transparent" BorderThickness="0">
+        <Button x:Name="btnData"    Margin="791,-6,156,167" Grid.Column="1" Click="btnData_Click" Background="Transparent" BorderThickness="0">
             <Image Source="konto.jpg" Width="68" Height="46"></Image>
 
         </Button>
@@ -95,6 +95,10 @@
 
         <Button x:Name="btnLogOut"  Grid.Column="1" Margin="912,5,26,178" Click="btnLogOut_Click" Background="Transparent" BorderThickness="0" >
             <Image Source="arrow.png"></Image>
+
+        </Button>
+        <Button x:Name="btnAccMenag"  Grid.Column="1" Margin="846,5,92,178" Background="Transparent" BorderThickness="0" Click="btnAccMenag_Click" >
+            <Image Source="/zemb.png"/>
 
         </Button>
         <!--<Frame x:Name="Main" Grid.Column="1" Content="Frame"/>-->
