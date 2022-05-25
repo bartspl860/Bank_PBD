@@ -76,7 +76,7 @@
                     <GradientStop Color="#2c386c" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            
+
             <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,106,0,0"/>
 
 
@@ -86,13 +86,16 @@
 
         </Border>
 
-        <Button x:Name="btnData"  Content="Twoje Konto" Background="#1D1C4E" FontSize="16" Foreground="#F9FFFFFF" Margin="27,10,732,179" Grid.Column="1" Click="btnData_Click"/>
-        <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="316,0,178,161" Grid.Column="1"/>
+        <Button x:Name="btnData"    Margin="850,-8,97,169" Grid.Column="1" Click="btnData_Click" Background="Transparent" BorderThickness="0">
+            <Image Source="konto.jpg" Width="68" Height="46"></Image>
+
+        </Button>
+        <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="204,0,290,161" Grid.Column="1"/>
 
 
-        <Button x:Name="btnLogOut"  Grid.Column="1" Margin="893,5,30,196" Click="btnLogOut_Click" Background="Transparent" BorderThickness="0" Width="40" >
+        <Button x:Name="btnLogOut"  Grid.Column="1" Margin="912,5,26,178" Click="btnLogOut_Click" Background="Transparent" BorderThickness="0" >
             <Image Source="arrow.png"></Image>
-            
+
         </Button>
         <!--<Frame x:Name="Main" Grid.Column="1" Content="Frame"/>-->
     </Grid>
