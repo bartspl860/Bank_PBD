@@ -37,25 +37,16 @@ namespace Bank_PBD
         private void btnInternalTransfers_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new Wewnetrzne();
-        }
-
-        private void btnExternalTransfers_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Zewn();
-        }
-       
-
+        }       
         private void lbxAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var Sele = new Historia(lbxAccounts.SelectedIndex);
             NavigationService.Navigate(Sele);
         }
-
         private void btnData_Click(object sender, RoutedEventArgs e)
         {
            Main.Content= new AccountInfoPage();
         }
-
         private void btnLogOut_Click(object sender, RoutedEventArgs e)
         {
 
@@ -63,10 +54,15 @@ namespace Bank_PBD
             var lo = new LoginPage();
             NavigationService.Navigate(lo);
         }
-
         private void btnAccMenag_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new AccMenag();
+        }
+
+        private void btnOpenChat_Click(object sender, RoutedEventArgs e)
+        {
+            var chat = new Czat();
+            chat.ShowDialog();
         }
     }
 }
