@@ -271,6 +271,9 @@
   <ItemGroup>
     <Resource Include="Kosz.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="muza.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

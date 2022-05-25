@@ -26,6 +26,8 @@ namespace Bank_PBD
         public AddAccount()
         {
             InitializeComponent();
+            
+            x.Play();
         }
 
         private void btnNewWindowAddAccount_Click(object sender, RoutedEventArgs e)
