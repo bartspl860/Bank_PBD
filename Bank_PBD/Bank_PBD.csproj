@@ -253,6 +253,9 @@
   <ItemGroup>
     <Resource Include="plus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Kosz.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

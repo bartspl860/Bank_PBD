@@ -9,7 +9,7 @@
       Title="AccMenag">
 
     <Grid Background="#20386c">
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,192,578,124" MaxWidth="300" />
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,192,578,124" MaxWidth="300" MaxHeight="200" />
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="25" Foreground="White" FontWeight="Bold" Text="Zarządzanie Kontami" VerticalAlignment="Top" Height="38" Width="264"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Dodaj Konto" VerticalAlignment="Top" Height="38" Width="264"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Usuń Konto" VerticalAlignment="Top" Height="38" Width="264"/>
@@ -18,6 +18,9 @@
         </Button>
         <Button x:Name="btnAddAcc" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="142,66,0,0" VerticalAlignment="Top" Height="30" Width="40" Click="btnAddAcc_Click" >
             <Image Source="/plus.png" RenderTransformOrigin="0.589,0.482" Height="22" Width="23"/>
+        </Button>
+        <Button x:Name="btnDeleteAcc" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="249,253,0,0" VerticalAlignment="Top" Height="39" Width="50" Click="btnDeleteAcc_Click">
+            <Image Source="/Kosz.png" RenderTransformOrigin="0.589,0.482" Height="42"  Width="50"/>
         </Button>
     </Grid>
 </Page>
