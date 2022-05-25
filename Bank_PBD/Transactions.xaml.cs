@@ -55,5 +55,13 @@ namespace Bank_PBD
         {
            Main.Content= new AccountInfoPage();
         }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+
+            Session.End();
+            var lo = new LoginPage();
+            NavigationService.Navigate(lo);
+        }
     }
 }

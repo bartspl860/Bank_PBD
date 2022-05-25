@@ -9,7 +9,7 @@
       Title="AccountInfoPage">
 
     <Grid Background="#20386c">
-        <Grid Margin="-2,1,362,354" Background="White" MaxHeight="90">
+        <Grid Margin="0,0,362,354" Background="White" MaxHeight="200" >
             <Label x:Name="lblAccNR" Content="000000" HorizontalAlignment="Left" Margin="11,41,0,0" VerticalAlignment="Top" Height="29" Width="187" FontSize="10" Foreground="DarkGray" HorizontalContentAlignment="Center"/>
             <Label x:Name="lblAccName" Content="name" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Height="31" Width="159" Foreground="DarkBlue" FontWeight="SemiBold" FontFamily="Arial-Black" FontSize="20"/>
             <Label x:Name="lblAccSaldo" Content="Label" HorizontalAlignment="Left" Margin="348,1,0,0" VerticalAlignment="Top" Height="51" Width="248" Foreground="DarkBlue" FontWeight="Bold" FontFamily="Arial-Black" FontSize="30"/>
