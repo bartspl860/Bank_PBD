@@ -9,7 +9,7 @@
       Title="AccMenag">
 
     <Grid Background="#20386c">
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,192,491,116"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,192,578,124" MaxWidth="300" />
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="25" Foreground="White" FontWeight="Bold" Text="Zarządzanie Kontami" VerticalAlignment="Top" Height="38" Width="264"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Dodaj Konto" VerticalAlignment="Top" Height="38" Width="264"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Usuń Konto" VerticalAlignment="Top" Height="38" Width="264"/>

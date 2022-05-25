@@ -34,5 +34,10 @@ namespace Bank_PBD
         {
 
         }
+
+        private void btnDeleteAcc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
