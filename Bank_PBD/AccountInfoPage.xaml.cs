@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank_PBD.Storage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace Bank_PBD
         public AccountInfoPage()
         {
             InitializeComponent();
+            foreach (var account in Session.Accounts)
+            {
+                lbxAccountSelect.Items.Add(account);
+            }
+            DisplayAccountInfo(0);
+        }
+        private void lbxAccountSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DisplayAccountInfo(lbxAccountSelect.SelectedIndex);
+        }
+        public void DisplayAccountInfo(int acc_index)
+        {
+            lblAccName.Content = Session.Accounts[acc_index].Name;
+            lblAccNR.Content = Session.Accounts[acc_index].IBAN_Number;
+            lblAccSaldo.Content = Session.Accounts[acc_index].Balance;
         }
     }
 }

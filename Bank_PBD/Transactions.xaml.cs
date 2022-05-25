@@ -48,9 +48,6 @@ namespace Bank_PBD
         private void lbxAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var Sele = new Historia(lbxAccounts.SelectedIndex);
-            //Main.Content = new Historia(lbxAccounts.SelectedIndex);
-            //MessageBox.Show("XD");
-
             NavigationService.Navigate(Sele);
         }
 
