@@ -53,5 +53,10 @@ namespace Bank_PBD
 
             NavigationService.Navigate(Sele);
         }
+
+        private void btnData_Click(object sender, RoutedEventArgs e)
+        {
+           Main.Content= new AccountInfoPage();
+        }
     }
 }

@@ -76,11 +76,13 @@
                     <GradientStop Color="#2c386c" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
-            
+            <Frame x:Name="Main" NavigationUIVisibility="Hidden" Margin="0,70,0,0"/>
+
+
 
 
         </Border>
+        <Button x:Name="btnData"  Content="Informacje Konta" Background="LightCoral" FontSize="16" Foreground="#F9FFFFFF" Margin="24,10,756,191" Grid.Column="1" Click="btnData_Click"/>
         <!--<Frame x:Name="Main" Grid.Column="1" Content="Frame"/>-->
     </Grid>
 </Page>
