@@ -9,6 +9,15 @@
       Title="AccMenag">
 
     <Grid Background="#20386c">
-        
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,192,491,116"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="25" Foreground="White" FontWeight="Bold" Text="Zarządzanie Kontami" VerticalAlignment="Top" Height="38" Width="264"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,66,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Dodaj Konto" VerticalAlignment="Top" Height="38" Width="264"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" FontSize="22" Foreground="White" FontWeight="Bold" Text="Usuń Konto" VerticalAlignment="Top" Height="38" Width="264"/>
+        <Button x:Name="btnQuestiomMark" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="142,132,0,0" VerticalAlignment="Top" Height="30" Width="40" Click="btnQuestiomMark_Click">
+            <Image Source="q.png" RenderTransformOrigin="0.589,0.482"></Image>
+        </Button>
+        <Button x:Name="btnAddAcc" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="142,66,0,0" VerticalAlignment="Top" Height="30" Width="40" Click="btnAddAcc_Click" >
+            <Image Source="/plus.png" RenderTransformOrigin="0.589,0.482" Height="22" Width="23"/>
+        </Button>
     </Grid>
 </Page>
