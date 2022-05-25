@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank_PBD"
         mc:Ignorable="d"
-        Title="Czat" Height="350" Width="450">
+        Title="Czat" Height="350" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox x:Name="tbxMessageContent" HorizontalAlignment="Left" Margin="10,7,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="392" Height="33"/>
-        <Button x:Name="btnSendMessage" Content="Wyślij" HorizontalAlignment="Left" Margin="402,7,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="38"/>
+        <TextBox x:Name="tbxMessageContent" TextWrapping="Wrap" Margin="10,7,98,7" Grid.Row="1"/>
+        <Button x:Name="btnSendMessage" Content="Wyślij" Margin="407,7,10,0" VerticalAlignment="Top" Height="36" RenderTransformOrigin="0.974,0.455" Grid.Row="1" Click="btnSendMessage_Click"/>
         <ListBox x:Name="lbxChatContent" Margin="10,10,10,10">
-            
+
         </ListBox>
     </Grid>
 </Window>

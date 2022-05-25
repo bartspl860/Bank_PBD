@@ -41,6 +41,7 @@ namespace Bank_PBD
         }
         private void ReloadChat()
         {
+            lbxChatContent.Items.Clear();
             using (var db = new DbBankContext())
             {
                 var messages = db.InternalMessages
@@ -50,7 +51,7 @@ namespace Bank_PBD
 
                 foreach (var message in messages)
                 {
-                    var whoSend = (message.ClientSend) ? "Ty" : "Pracownik Banku";
+                    var whoSend = (message.ClientSend) ? "Ty:" : "Pracownik Banku:";
                     lbxChatContent.Items.Add(
                         $"{whoSend}\n" +
                         $"{message.Date}\n" +
@@ -58,6 +59,12 @@ namespace Bank_PBD
                         );
                 }
             }
+        }
+
+        private void btnSendMessage_Click(object sender, RoutedEventArgs e)
+        {
+            SendMessage(tbxMessageContent.Text);
+            tbxMessageContent.Clear();
         }
     }
 }
