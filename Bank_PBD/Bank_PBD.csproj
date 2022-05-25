@@ -94,16 +94,25 @@
     <Compile Include="AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Czat.xaml.cs">
+      <DependentUpon>Czat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205140913246_Bank-init.cs" />
-    <Compile Include="Migrations\202205140913246_Bank-init.designer.cs">
-      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
+    <Compile Include="Migrations\202205251614230_Messages.cs" />
+    <Compile Include="Migrations\202205251614230_Messages.designer.cs">
+      <DependentUpon>202205251614230_Messages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205251628022_MessagesBool.cs" />
+    <Compile Include="Migrations\202205251628022_MessagesBool.designer.cs">
+      <DependentUpon>202205251628022_MessagesBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\InternalMessages.cs" />
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Czat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,7 +192,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\DbBankContext.cs" />
     <Compile Include="Model\Client.cs" />
@@ -197,8 +209,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205140913246_Bank-init.resx">
-      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205251614230_Messages.resx">
+      <DependentUpon>202205251614230_Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205251628022_MessagesBool.resx">
+      <DependentUpon>202205251628022_MessagesBool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -237,6 +252,7 @@
   <ItemGroup>
     <Resource Include="konto.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

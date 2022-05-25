@@ -22,5 +22,6 @@ namespace Bank_PBD.Model
         public DbSet<Client> Clients { get; set; }
         public DbSet<Account> Accounts { get; set; }
         public DbSet<InternalTransaction> InternalTransactions { get; set; }
+        public DbSet<InternalMessage> InternalMessages { get; set; }
     }
 }

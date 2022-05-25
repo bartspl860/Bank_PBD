@@ -90,7 +90,7 @@
             <Image Source="konto.jpg" Width="68" Height="46"></Image>
 
         </Button>
-        <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="204,0,290,161" Grid.Column="1"/>
+        <Label Content="Witaj w aplikacji SquareBanku" FontSize="36" BorderThickness="0"  Background="Transparent" Foreground="#F9FFFFFF" Margin="247,0,247,161" Grid.Column="1"/>
 
 
         <Button x:Name="btnLogOut"  Grid.Column="1" Margin="912,5,26,178" Click="btnLogOut_Click" Background="Transparent" BorderThickness="0" >
