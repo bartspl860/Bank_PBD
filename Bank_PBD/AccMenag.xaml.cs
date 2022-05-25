@@ -47,7 +47,8 @@ namespace Bank_PBD
 
         private void btnAddAcc_Click(object sender, RoutedEventArgs e)
         {
-
+            var dodaj = new AddAccount();
+            dodaj.Show();
         }
 
         private void btnDeleteAcc_Click(object sender, RoutedEventArgs e)

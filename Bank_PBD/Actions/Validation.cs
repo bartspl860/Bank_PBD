@@ -101,7 +101,7 @@ namespace Bank_PBD.Actions
             string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
             return hash;
         }
-        private static string GenerateIBAN(DbBankContext db)
+        public static string GenerateIBAN(DbBankContext db)
         {
             const string numbers = "0123456789";
             string result;
