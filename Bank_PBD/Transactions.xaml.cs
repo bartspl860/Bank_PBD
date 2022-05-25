@@ -63,5 +63,10 @@ namespace Bank_PBD
             var lo = new LoginPage();
             NavigationService.Navigate(lo);
         }
+
+        private void btnAccMenag_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AccMenag();
+        }
     }
 }
