@@ -36,6 +36,7 @@ namespace Bank_PBD.Actions
             }
             return true;           
         }
+
         public static void Logout()
         {
             Session.End();

@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Bank_PBD.Actions;
+using System.Data;
+using System.Data.SqlClient;
+using Bank_PBD.Model;
+using Bank_PBD.Storage;
 
 namespace Bank_PBD
 {
@@ -23,6 +28,16 @@ namespace Bank_PBD
         public AccMenag()
         {
             InitializeComponent();
+            ReloadListBox();
+        }
+
+        void ReloadListBox()
+        {
+            lbxAccountsList.Items.Clear();
+            foreach (var item in Session.Accounts)
+            {
+                lbxAccountsList.Items.Add(item);
+            }
         }
 
         private void btnQuestiomMark_Click(object sender, RoutedEventArgs e)
@@ -37,7 +52,26 @@ namespace Bank_PBD
 
         private void btnDeleteAcc_Click(object sender, RoutedEventArgs e)
         {
+            var index = lbxAccountsList.SelectedIndex;
+            if (index < 0)
+            {
+                //MessageBox
+                return;
+            }
+            using (var db = new DbBankContext())
+            {
+                var sessionAccount = Session.Accounts[index];
 
+                var account = db.Accounts
+                    .Where(a => a.Id == sessionAccount.Id)
+                    .First();
+                
+                db.Accounts.Remove(account);
+
+                db.SaveChanges();
+                Session.Reload();
+                ReloadListBox();
+            }
         }
     }
 }

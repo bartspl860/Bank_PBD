@@ -7,13 +7,13 @@ namespace Bank_PBD.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Bankinit : IMigrationMetadata
+    public sealed partial class Employee : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Bankinit));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Employee));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205140913246_Bank-init"; }
+            get { return "202205251850187_Employee"; }
         }
         
         string IMigrationMetadata.Source

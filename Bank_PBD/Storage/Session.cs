@@ -13,6 +13,7 @@ namespace Bank_PBD.Storage
         public static Client ValidatedClient { get; private set; }
         public static Account[] Accounts { get; private set; }
         public static DateTime? StartTime { get; private set; }
+        public static Transactions Transactions { get; set; }
         public static void Start(Client client)
         {
             using(var db = new DbBankContext())
@@ -33,6 +34,17 @@ namespace Bank_PBD.Storage
             Accounts = null;
             StartTime = null;
             Active = false;
+        }
+        public static void Reload()
+        {
+            using (var db = new DbBankContext())
+            {
+                Accounts = db.Accounts.Where(w => w.IdClient == ValidatedClient.Id).ToArray();
+            }
+            foreach (var account in Session.Accounts)
+            {
+                Transactions.lbxAccounts.Items.Add(account);
+            }
         }
     }
 }

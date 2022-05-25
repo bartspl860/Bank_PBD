@@ -27,12 +27,13 @@ namespace Bank_PBD
         public Transactions()
         {
             InitializeComponent();
-
+            Session.Transactions = this;
             foreach(var account in Session.Accounts)
             {
                 lbxAccounts.Items.Add(account);
             }
         }
+
 
         private void btnInternalTransfers_Click(object sender, RoutedEventArgs e)
         {

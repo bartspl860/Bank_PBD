@@ -31,43 +31,39 @@ namespace Bank_PBD
 
             using (var db = new DbBankContext())
             {
-                foreach (var el in db.Clients)
-                    lbxUsersList.Items.Add(el.ToString());
+                foreach (var client in db.Clients) { 
+                    lbxUsersList.Items.Add(client.ToString());
+                    localClients.Add(client);
+                }
             }
         }
+
+        private List<Client> localClients = new List<Client>(); 
 
         private void tbxSearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             using (var db = new DbBankContext())
             {
-                if (string.IsNullOrEmpty(tbxSearchBar.Text) == false)
+                localClients.Clear();
+                lbxUsersList.Items.Clear();
+                if (tbxSearchBar.Text != String.Empty)
                 {
-                    lbxUsersList.Items.Clear();
-                    foreach (var el in db.Clients)
+                    foreach (var client in db.Clients)
                     {
-                        if (el.ToString().Contains(tbxSearchBar.Text))
+                        if (client.ToString().Contains(tbxSearchBar.Text))
                         {
-                            lbxUsersList.Items.Add(el.ToString());
+                            lbxUsersList.Items.Add(client.ToString());
+                            localClients.Add(client);
                         }
                     }
                 }
-                else if (tbxSearchBar.Text == "")
+                else
                 {
-                    foreach (var el in db.Clients)
+                    foreach (var client in db.Clients)
                     {
-                        lbxUsersList.Items.Add(el.ToString());
+                        lbxUsersList.Items.Add(client.ToString());
+                        localClients.Add(client);
                     }
-                }
-            }
-        }
-
-        private void lbxUsersList_Selected(object sender, RoutedEventArgs e)
-        {
-            using (var db = new DbBankContext())
-            {
-                foreach (var el in db.Accounts)
-                {
-                    lstbxAccounts.Items.Add(el.ToString());
                 }
             }
         }
@@ -80,8 +76,12 @@ namespace Bank_PBD
                 if (lbxUsersList.SelectedIndex < 0)
                     return;
 
-                var query = db.Accounts.Where(c => c.IdClient == lbxUsersList.SelectedIndex);
-                lstbxAccounts.Items.Add(query.ToString());
+                var client = localClients[lbxUsersList.SelectedIndex];
+                var accounts = db.Accounts.Where(w => w.IdClient == client.Id);
+                foreach(var account in accounts)
+                {
+                    lstbxAccounts.Items.Add(account.ToString());
+                }
             }
         }
     }

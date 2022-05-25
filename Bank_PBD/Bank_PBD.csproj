@@ -103,10 +103,11 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205140913246_Bank-init.cs" />
-    <Compile Include="Migrations\202205140913246_Bank-init.designer.cs">
-      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
+    <Compile Include="Migrations\202205251850187_Employee.cs" />
+    <Compile Include="Migrations\202205251850187_Employee.designer.cs">
+      <DependentUpon>202205251850187_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
@@ -204,8 +205,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205140913246_Bank-init.resx">
-      <DependentUpon>202205140913246_Bank-init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205251850187_Employee.resx">
+      <DependentUpon>202205251850187_Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
