@@ -109,14 +109,6 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205251614230_Messages.cs" />
-    <Compile Include="Migrations\202205251614230_Messages.designer.cs">
-      <DependentUpon>202205251614230_Messages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205251628022_MessagesBool.cs" />
-    <Compile Include="Migrations\202205251628022_MessagesBool.designer.cs">
-      <DependentUpon>202205251628022_MessagesBool.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\InternalMessages.cs" />
     <Compile Include="RegisterPage.xaml.cs">
@@ -216,12 +208,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202205251614230_Messages.resx">
-      <DependentUpon>202205251614230_Messages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205251628022_MessagesBool.resx">
-      <DependentUpon>202205251628022_MessagesBool.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
