@@ -49,6 +49,7 @@ namespace Bank_PBD
         {
             var dodaj = new AddAccount();
             dodaj.Show();
+            ReloadListBox();
         }
 
         private void btnDeleteAcc_Click(object sender, RoutedEventArgs e)
@@ -70,7 +71,9 @@ namespace Bank_PBD
                 db.Accounts.Remove(account);
 
                 db.SaveChanges();
-                Session.Reload();
+
+                Session.ReloadAccounts();
+
                 ReloadListBox();
             }
         }

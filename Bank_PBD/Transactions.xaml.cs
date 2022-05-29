@@ -28,10 +28,7 @@ namespace Bank_PBD
         {
             InitializeComponent();
             Session.Transactions = this;
-            foreach(var account in Session.Accounts)
-            {
-                lbxAccounts.Items.Add(account);
-            }
+            Session.ReloadAccounts();
         }
 
 

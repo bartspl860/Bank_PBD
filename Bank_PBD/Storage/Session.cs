@@ -35,15 +35,18 @@ namespace Bank_PBD.Storage
             StartTime = null;
             Active = false;
         }
-        public static void Reload()
+        public static void ReloadAccounts()
         {
             using (var db = new DbBankContext())
             {
                 Accounts = db.Accounts.Where(w => w.IdClient == ValidatedClient.Id).ToArray();
-            }
-            foreach (var account in Session.Accounts)
-            {
-                Transactions.lbxAccounts.Items.Add(account);
+            
+                Transactions.lbxAccounts.Items.Clear();
+
+                foreach (var account in Session.Accounts)
+                {
+                    Transactions.lbxAccounts.Items.Add(account);
+                }
             }
         }
     }
