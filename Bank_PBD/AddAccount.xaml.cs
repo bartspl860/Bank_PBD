@@ -47,6 +47,7 @@ namespace Bank_PBD
                 db.SaveChanges();
 
             }
+            Session.Reload();
             this.Close();
         }
     }
