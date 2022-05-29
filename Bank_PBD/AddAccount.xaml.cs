@@ -38,7 +38,7 @@ namespace Bank_PBD
 
                 var account = new Account()
                 {
-                    IBAN_Number=Actions.Validation.GenerateIBAN(db),
+                    IBAN_Number = Actions.Validation.GenerateIBAN(db),
                     Name = txtbxAccName.Text,
                     IdClient = Session.ValidatedClient.Id,
                 };
