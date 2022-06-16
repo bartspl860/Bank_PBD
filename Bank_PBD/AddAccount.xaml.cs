@@ -34,13 +34,13 @@ namespace Bank_PBD
 
             using (var db = new DbBankContext())
             {
-                var client = db.Clients.Select(x=>x.Id==Session.ValidatedClient.Id);
+                var client = db.Clients.Select(x=>x.Id==Session.ValidatedUser.Id);
 
                 var account = new Account()
                 {
                     IBAN_Number = Actions.Validation.GenerateIBAN(db),
                     Name = txtbxAccName.Text,
-                    IdClient = Session.ValidatedClient.Id,
+                    IdClient = Session.ValidatedUser.Id,
                 };
                 db.Accounts.Add(account);
 

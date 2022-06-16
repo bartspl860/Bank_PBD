@@ -30,7 +30,7 @@ namespace Bank_PBD
                 var message = new InternalMessage()
                 {
                     Message = msg,
-                    ClientId = Session.ValidatedClient.Id,
+                    ClientId = Session.ValidatedUser.Id,
                     ClientSend = true,
                     Date = DateTime.Now                    
                 };
@@ -45,7 +45,7 @@ namespace Bank_PBD
             using (var db = new DbBankContext())
             {
                 var messages = db.InternalMessages
-                    .Where(m => m.ClientId == Session.ValidatedClient.Id)
+                    .Where(m => m.ClientId == Session.ValidatedUser.Id)
                     .Select(m => m)
                     .OrderBy(m => m.Date);
 

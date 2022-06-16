@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Bank_PBD.Actions;
+using static Bank_PBD.Actions.Validation;
 
 namespace Bank_PBD
 {
@@ -25,10 +27,22 @@ namespace Bank_PBD
             InitializeComponent();
         }
 
-        private void btnStaffLogin_Click(object sender, RoutedEventArgs e)
+        private async void btnStaffLogin_Click(object sender, RoutedEventArgs e)
         {
-            var admPanel = new AdminPanel();
-            NavigationService.Navigate(admPanel);
+            var loading = new Loading();
+            loading.Show();
+            if (await Actions.Validation.LoginAsync(tbxLogin.Text, tbxPassword.Password, UserType.EMPLOYEE)){
+                loading.Hide();
+                var admPanel = new AdminPanel();
+                NavigationService.Navigate(admPanel);
+            }
+            else
+            {
+                loading.Hide();
+                MessageBox.Show("Logowanie nieudane");
+                tbxLogin.Clear();
+                tbxPassword.Clear();
+            }
         }
 
         private void btnGoBack_Click(object sender, RoutedEventArgs e)

@@ -7,27 +7,47 @@ using System.Security.Cryptography;
 using System.Windows;
 using Bank_PBD.Model;
 using Bank_PBD.Storage;
+using System.Data.Entity;
 
 namespace Bank_PBD.Actions
 {
     public static class Validation
     {
-        public async static Task<bool> LoginAsync(string username, string password)
+        public enum UserType { CLIENT, EMPLOYEE }
+        public async static Task<bool> LoginAsync(string username, string password, UserType userType)
         {
-            return await Task.Run(() => Login(username, password));
+            return await Task.Run(() => Login(username, password, userType));
         }
-        public static bool Login(string username, string password)
-        {
+        public static bool Login(string username, string password, UserType userType)
+        {            
             try
             {
                 using(var db = new DbBankContext())
                 {
-                    var hpasswd = Hash(password);
-                    var client = db.Clients.Where(w => w.Login == username && w.Password == hpasswd);
-                    if (client.Count() == 0)
-                        throw new Exception("Login error");
 
-                    Session.Start(client.First());
+                    var hpasswd = Hash(password);
+                    IUser user = null; 
+
+                    if(userType == UserType.CLIENT)
+                    {
+                        user = db.Clients.Where(w => w.Login == username && w.Password == hpasswd).First();
+                    }
+                    else
+                    {
+                        user = db.Employees.Where(w => w.Login == username && w.Password == hpasswd).First();
+                    }
+
+                    Console.WriteLine(user);
+
+                    if (user == null)
+                    {
+                        throw new Exception("Login error");
+                    }
+                        
+                    if(userType == UserType.CLIENT)
+                        Session.Start(user as Client);
+                    else
+                        Session.Start(user as Employee);
                 }
             }
             catch (Exception ex)
@@ -56,8 +76,8 @@ namespace Bank_PBD.Actions
                         throw new FormatException("Password must have min 8 characters lenght");
 
                     // Same login check
-                    var samePasswdClients = db.Clients.Where(c => c.Login == login);
-                    if (samePasswdClients.Count() != 0)
+                    var sameLoginClients = db.Clients.Where(c => c.Login == login);
+                    if (sameLoginClients.Count() != 0)
                         throw new ArgumentException("Client with this login already exists");
 
                     var client = new Client()

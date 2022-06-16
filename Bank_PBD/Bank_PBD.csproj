@@ -109,8 +109,14 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206161021382_Employees.cs" />
+    <Compile Include="Migrations\202206161021382_Employees.designer.cs">
+      <DependentUpon>202206161021382_Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\InternalMessages.cs" />
+    <Compile Include="Model\IUser.cs" />
     <Compile Include="RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
@@ -208,6 +214,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202206161021382_Employees.resx">
+      <DependentUpon>202206161021382_Employees.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
