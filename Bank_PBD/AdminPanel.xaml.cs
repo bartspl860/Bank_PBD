@@ -77,12 +77,18 @@ namespace Bank_PBD
                     return;
 
                 var client = localClients[lbxUsersList.SelectedIndex];
+                tblProfil.Text = $"Profil: {client.Name} {client.Surname}";
                 var accounts = db.Accounts.Where(w => w.IdClient == client.Id);
                 foreach(var account in accounts)
                 {
                     lstbxAccounts.Items.Add(account.ToString());
                 }
             }
+        }
+        private void btnChat_Click(object sender, RoutedEventArgs e)
+        {
+            var chat = new AdminChat();
+            chat.ShowDialog();
         }
     }
 }

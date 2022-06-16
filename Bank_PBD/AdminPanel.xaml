@@ -51,12 +51,12 @@
 
                 <TextBlock Width="280" Height="40" Background="Transparent" Padding="5"  TextAlignment="Left" Text="Menu" FontSize="20" FontFamily="Persons" Foreground="#666699" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 10 0 0"/>
                 <!--Tranakcje-->
-                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Transakcje" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 10 0 0"><Run Language="pl-pl" Text="Narzędzia"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
                 <StackPanel Background="White" Width="240" Height="120" Margin="0 20 0 0">
-                    <Button x:Name="btnInternalTransfers"  Content="Przelewy Wewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30"/>
+                    <Button x:Name="btnChat"  Content="Czat" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30" Click="btnChat_Click"/>
                     <Button x:Name="btnExternalTransfers"  Content="Przelewy Zewnętrzne" Margin="0 20 0 0" Background="#41518f" FontSize="16" Foreground="#F9FFFFFF" HorizontalAlignment="Center" Width="220" Height="30"/>
                 </StackPanel>
-                <TextBlock Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Profil" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+                <TextBlock x:Name="tblProfil" Width="280" Height="30" Background="#31518f" Padding="5"  TextAlignment="Center" Text="Profil" FontSize="18" FontFamily="Persons" Foreground="Beige" VerticalAlignment="Center"   TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0 20 0 0"/>
                 <StackPanel Background="White" Width="240" Height="120" Margin="0 20 0 0">
                     <TextBlock Width="240" Height="30" Background="White" Text="Konta:" TextAlignment="Center" FontFamily="Comic Sans MS" FontSize="20"/>
                     <ListBox x:Name="lstbxAccounts" Width="240" Height="90"></ListBox>
@@ -76,8 +76,17 @@
             </Border.Background>
             <StackPanel>
                 <TextBlock TextWrapping="Wrap" FontSize="60" Text="Witaj w panelu admina" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0"></TextBlock>
-                <TextBox x:Name="tbxSearchBar" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" MinHeight="30" TextChanged="tbxSearchBar_TextChanged"/>
-                <ListBox x:Name="lbxUsersList" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False" Height="590" SelectionChanged="lbxUsersList_SelectionChanged"/>
+                <TextBox x:Name="tbxSearchBar" HorizontalAlignment="Center" MinWidth="300" MinHeight="30" TextChanged="tbxSearchBar_TextChanged" Height="9" RenderTransformOrigin="0.5,0.5" Margin="0,4,0,10">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <ListBox x:Name="lbxUsersList" VerticalContentAlignment="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False" Height="584" SelectionChanged="lbxUsersList_SelectionChanged"/>
             </StackPanel>
 
         </Border>

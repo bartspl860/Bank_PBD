@@ -32,8 +32,10 @@ namespace Bank_PBD
                     Message = msg,
                     ClientId = Session.ValidatedUser.Id,
                     ClientSend = true,
-                    Date = DateTime.Now                    
+                    Date = DateTime.Now,
+                    EmployeeId = null
                 };
+
                 db.InternalMessages.Add(message);
                 db.SaveChanges();
                 ReloadChat();
@@ -59,6 +61,8 @@ namespace Bank_PBD
                         );
                 }
             }
+            lbxChatContent.SelectedIndex = lbxChatContent.Items.Count - 1;
+            lbxChatContent.ScrollIntoView(lbxChatContent.SelectedItem);
         }
 
         private void btnSendMessage_Click(object sender, RoutedEventArgs e)
